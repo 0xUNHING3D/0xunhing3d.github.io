@@ -61,8 +61,9 @@ main() {
     -d "$SITE_DIR$_baseurl" -c "$_config"
 
   # test
-  bundle exec htmlproofer --disable-external --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" "$SITE_DIR" \
-    --allow-hash-href
+  bundle exec htmlproofer "$SITE_DIR" \
+    --disable-external \
+    --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 }
 
 while (($#)); do
